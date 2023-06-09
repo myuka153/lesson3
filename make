@@ -49,16 +49,17 @@
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img/img2.png");
+        var texture = textureLoader.load("web1.webp");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
         
-        // 球を作成
-        var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
-        var Sphere1 = new THREE.Mesh(geometry2, mat);
-        Sphere1.position.set(0,0,0);
-        scene.add(Sphere1);
+        // 円柱を作成
+        var geometry3 = new THREE.CylinderGeometry( 0.3, 0.25, 0.5, 20, 4 );
+        var Cylinder = new THREE.Mesh(geometry3, mat);
+        Cylinder.position.set(1.5,0,0);
+        scene.add(Cylinder);
+
         
 
         
@@ -75,7 +76,7 @@
          
 
           // 箱を回転させる
-          Sphere1.rotation.x += 0.01;
+          Cylinder.rotation.x += 0.01;
          
 
          
