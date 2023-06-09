@@ -55,7 +55,7 @@
 
         
         // 円柱を作成
-        var geometry3 = new THREE.CylinderGeometry( 0.3, 0.25, 0.5, 20, 4 );
+        var geometry3 = new THREE.CylinderGeometry( 0.3, 0.25, 1, 20, 4 );
         var Cylinder = new THREE.Mesh(geometry3, mat);
         Cylinder.position.set(0,0,0);
         scene.add(Cylinder);
@@ -76,7 +76,7 @@
          
 
           // 箱を回転させる
-          Cylinder.rotation.x += 0.01;
+          Cylinder.rotation.y += 0.01;
          
 
          
