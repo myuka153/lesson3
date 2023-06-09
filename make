@@ -49,29 +49,19 @@
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("cit.png");
+        var texture = textureLoader.load("img/img2.png");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
-        // 箱を作成
-        var geometry1 = new THREE.BoxGeometry(0.8, 0.8, 0.8);
-        //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
-        //var box = new THREE.Mesh(geometry, material);
-        var box = new THREE.Mesh(geometry1, mat);
-        box.position.set(-1.5,0,0); //位置を指定
-        scene.add(box);   // シーンに追加
-
+        
         // 球を作成
         var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
-        var Sphere = new THREE.Mesh(geometry2, mat);
-        Sphere.position.set(0,0,0);
-        scene.add(Sphere);
+        var Sphere1 = new THREE.Mesh(geometry2, mat);
+        Sphere1.position.set(0,0,0);
+        scene.add(Sphere1);
+        
 
-        // 円柱を作成
-        var geometry3 = new THREE.CylinderGeometry( 0.2, 0.5, 0.5, 20, 4 );
-        var Cylinder = new THREE.Mesh(geometry3, mat);
-        Cylinder.position.set(1.5,0,0);
-        scene.add(Cylinder);
+        
 
 
         update();
@@ -82,17 +72,13 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-           // 箱を回転させる
-          box.rotation.x += 0.01;
-          box.rotation.y += 0.01;
+         
 
           // 箱を回転させる
-          Sphere.rotation.x += 0.01;
-          Sphere.rotation.y += 0.01;
+          Sphere1.rotation.x += 0.01;
+         
 
-          // 円柱を回転させる
-          Cylinder.rotation.x += 0.01;
-          Cylinder.rotation.y += 0.01;
+         
         }
       }
     </script>
